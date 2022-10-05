@@ -23,19 +23,7 @@ Normal epithelial cells (shown orange).
 Cancer epithelial cells (shown in red).
 Immune leukocyte cells (shown in green).
 Connective fibroblast cells (shown in blue).
-The “Deep Learning for MSc Coursework 2022” Kaggle site has a training set of nuclei images (train.zip) with images given in suitable subdirectories with the label names. It also contains test archive (test.zip) which has similar 32x32 images of unlabelled cell nuclei. (Note that the identity of each image is given by its number 'N.png'. This then corresponds to its identity in the submitted csv files.)
-
-You may notice that the classes in the training file are unbalanced with 'Normal' cells being in the minority. However, the testing file is balanced with roughly equal numbers of each cell type. So accuracy is an appropriate metric and this will be used. But you will have to think about how you handle the unbalanced training set.
 
 The goal of this coursework is to develop a ConvNet that can predict the cell type of the images in the test.zip file. However, you must also attempt to do unsupervised pre-training by training an autoencoder on the unlabelled test image data and then use the 'encoder' section (with trained weights) as a feature extractor for the first part of your ConvNet.
 
-You must also have a maximum of only 8 layers in your final ConvNet design - with layers defined as either (CNN + activation), (pooling) or (fully connected + activation).
 
-You may wish to approach this challenge with the following steps (note the lecture on recommendations to producing a deep learning system):
-
-Create a simple ConvNet trained on the labelled data and see if you can get better than random accuracy.
-See if you can turn this simple ConvNet into an autoencoder and train it using the unlabelled test image data.
-Use the encoder part of the autoencoder to recreate your ConvNet and train it using the smaller quantity of labelled data and see if you can beat the accuracy of your initial ConvNet.
-Note that you may also want to use a validation dataset and plot out loss / accuracy curves to ensure you are not overfitting the training data set.
-
-So you need to submit a 'test.csv' file where the first column is the identifier of the test image and the second column is your predicted cell type given as bold above.
